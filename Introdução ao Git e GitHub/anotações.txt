@@ -1,0 +1,160 @@
+INTRODUÇÃO AO GIT E GITHUB
+
+	COMANDOS BÁSICOS TERMINAL
+
+NAVEGAÇÃO BÁSICA
+O Git é um software que o design é diferente do GUI, não tem uma interface gráfica, a forma de interação é por linha de comando, sendo feito por CLI.
+O terminal do Windows é derivado do Shell e do Linux do Bash, então os comandos são diferentes.
+Exemplo: 
+•	Windows
+o	cd
+	permite a navegação entre pastas
+	retrocede cd ..
+o	dir	
+	listar diretórios contidos na pasta atual
+o	mkdir
+	cria uma pasta
+o	del / rmdir
+	del -> deleta arquivos do diretório
+	rmdir -> deleta diretório 
+o	cls 
+	limpar a tela
+o	tab 
+	função de autocompleta ao digitar as letrar iniciais de algum diretório existente
+o	echo
+	apenas função de eco, printa de volta na tela uma frase ou texto digitado
+o	> 
+	Redirecionador de fluxo, ele pega o output, saída da função echo e joga num arquivo
+	O SO checa se nessa pasta tem um arquivo com aquele nome e cria caso não tenha
+
+
+
+
+
+
+
+•	Unix
+o	cd
+	permite a navegação entre pastas
+	cd .. retrocede 
+o	ls
+	listar diretórios contidos na pasta atual
+o	ls -a 
+	listar diretórios ocultos
+o	mkdir
+	cria uma pasta
+o	rm -rf
+	deleta todas as pastas
+	o r é pra deletar todas as pastas contidas na pasta selecionada
+	o f é usado pra não aparecer nenhum tipo de confirmação, do tipo se tem certeza que quer deletar ou não
+o	clear ou crtl + L
+	limpar a tela
+o	tab 
+	função de autocompleta ao digitar as letrar iniciais de algum diretório existente
+o	echo
+	apenas função de eco, printa de volta na tela uma frase ou texto digitado
+o	> 
+	Redirecionador de fluxo, ele pega o output, saída da função echo e joga num arquivo
+	O SO checa se nessa pasta tem um arquivo com aquele nome e cria caso não tenha
+o	mv nomedoarquivo nomedapasta/
+
+Todos os comandos têm variâncias, ou seja, flags/complementos que acrescentam, modificam ou formatam a forma como os comandos são devolvidos.
+
+
+
+
+
+
+
+	
+
+
+	TÓPICOS FUNDAMENTAIS PARA ENTENDER O FUNCIONAMENTO DO GIT
+
+SHA1
+SHA1 significa Secure Hash Algorithm (Algoritmo de Hash Seguro), é um conjunto de funções hash criptográficas projetadas pela NSA (Agência de Segurança Nacional dos EUA).
+É um algoritmo que pega o arquivo e embaralha de uma forma muito específica. Os dados encriptados geram um conjunto de caracteres identificador de 40 dígitos, esse conjunto é único e serve como identificação. Ou seja, se você tem um arquivo de texto grande e roda o algoritmo, ele gera um conjunto de caracteres de 40 dígitos (único), mas se esse arquivo sofre alteração de uma virgula, é gerado outro conjunto de caracteres, mas se voltamos e colocamos a virgula de volta no mesmo lugar, é gerado o conjunto anterior à alteração.
+É uma forma curta de representar um arquivo. 
+
+Comando -> openssl sha1 nomedoarquivo
+
+OBJETOS INTERNOS DO GIT
+
+BLOBS
+TREE
+COMMIT
+
+
+
+
+
+
+
+
+
+	CHAVES SSH E TOKENS
+
+CHAVE SSH
+É uma forma de estabelecer uma conexão segura e encriptada entre duas máquinas, no caso uma conexão entre a máquina local e o Git. Existe uma chave publica e uma privada. A chave publica é colocada no Github, a partir dessa inserção o GitHub reconhece a máquina como confiável. 
+Comandos pra criar a ssh key no Git Bash
+ssh-keygen -t ed25519 -C emailcadastrado@gmail.com
+inserir senha 
+
+Comando pra ver a chave pública:
+ir pra pasta .ssh e listar 
+cat id_ed25519.pub 
+copiar a chave e inserir no GitHub
+
+Comandos pra chave funcionar (inicializar o ssh agente, que é responsável por pegar as chaves e lidar com elas)
+eval $(ssh-agent -s)
+nesse passo é passada a chave privada, porque toda vez que chegar uma criptografia ele vai usar a chave privada pra decriptografar  
+ssh-add id_ed25519
+
+
+
+
+
+
+
+
+
+
+
+	PRIMEIROS COMANDOS COM GIT
+
+•	git init 
+o	cria uma pasta chamada .git 
+o	cria repositório do Git dentro do diretório que o comando foi feito
+•	git add
+o	mover e dar início ao versionamento
+o	add . ou add * move tudo que foi alterado pra staged
+•	git commit
+•	git status
+o	monitora os status dos arquivos, se foi modificado etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	GITHUB
+
+git config –global user.email “email”
+git config –global user.name nome
+
